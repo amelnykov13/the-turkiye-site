@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Red Hat Display', sans-serif; overflow-x: hidden;">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cuisine | The Turkiye</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css files/apy.css') }}">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='Materials/pngwing.com (2).png ') }}">
+      </head>
+    <body>
+    
+      <nav id="navby" class="navbar navbar-dark navbar-expand-md fixed-top py-1" style="background: none;">
+        <!-- <a href="#" class="navbar-brand mx-3">Go</a> -->
+        <img class="navbar-brand img-fluid mx-2" onclick="window.location.href='/'" src="{{ url_for('static', filename='Materials/pngwing.com (2).png ') }}" height="30" width="30">
+        <button class="navbar-toggler custom-toggler" data-toggle="collapse" data-target="#navLink">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end mx-4" id="navLink">
+          <ul class="navbar-nav">
+            <li class="nav-item mx-2">
+              <a href="/culture-page" class="nav-link">CULTURE</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="/history-page" class="nav-link">HISTORY</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="/historical-places" style="word-spacing: -5px;" class="nav-link">HISTORICAL PLACES</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      
+      <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            var navby = document.getElementById('navby');
+            var eleme = document.getElementById('thubnail');
+
+            elemeH = eleme.clientHeight;
+
+            if (window.scrollY > elemeH) {
+                navbar.classList.add('scrolled');
+                navby.style.backgroundColor = '#241438';
+            } else {
+                navbar.classList.remove('scrolled');
+                navby.style.backgroundColor = "transparent";
+            }
+        });
+    </script>
+
+
+      <section id="thubnail" class="container-fluid p-3 m-0 cuisinemain" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ url_for('static', filename='Materials/food-turkish-cuisine-turkey.jpg')}}') no-repeat center center/cover; height: 100vh;">
+        <div class="row  justify-content-center text-center">
+            <div class="col-lg-6 col-10 p-0 m-0">
+                <h1 class="text-white place_heading">Cuisine</h1>
+                <p class="text-white place_descr">Turkish cuisine is a delightful journey through centuries of culinary tradition, blending flavors from the Mediterranean, Middle East, Balkans, and Central Asia. Turkish cuisine offers a diverse array of dishes that tantalize the taste buds and reflect the country's vibrant cultural tapestry.</p>
+                <button onclick="scrollToSection('firstpost')" class="btn btn-outline-warning px-3">Discover <span class="bi bi-person-fill"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                </svg></span></button>
+            </div>
+        </div>
+      </section>
+
+      <script>
+
+        function scrollToSection(sectionId) {
+          var section = document.getElementById(sectionId);
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      </script>
+
+      <content class="container" id="firstpost">
+        <div class="row align-items-center my-4 py-4">
+          <div class="col-xl-6">
+            <div class="row justify-content-center text-xl-start text-center">
+              <div class="col-xl-7 col-12 text-white">
+                <h5 class="category_info_heading">Kebab</h5>
+                <p class="category_info_descr">Kebabs are a delicious combination of grilled meats, vegetables, and spices.
+                   Whether it's the famous Adana kebab, made with minced meat and spicy seasonings, or the succulent shish kebab, featuring skewered chunks of marinated meat, each bite is a savory delight.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-12 text-center">
+            <img src="{{ url_for('static', filename='Materials/kebab.jpg')}}" alt="" class="img-fluid rounded shadow" height="450" width="450">
+          </div>   
+        </div>
+      </content>
+      
+      <content class="container">
+        <div class="row align-items-center my-4 py-4">
+          <div class="col-xl-6 col-12 order-lg-1 order-2 text-center">
+            <img src="{{ url_for('static', filename='Materials/mezejpg.jpg')}}" alt="" class="img-fluid rounded shadow" height="450" width="450">
+          </div>  
+          <div class="col-xl-6 col-12 order-lg-2 order-1">
+            <div class="row justify-content-center text-xl-start text-center">
+              <div class="col-xl-9 col-11 text-white">
+                <h5 class="category_info_heading">Meze</h5>
+                <p class="category_info_descr"> Meze, or appetizers, are an integral part of Turkish dining culture. These small plates offer a tantalizing array of flavors and textures, from creamy hummus and smoky eggplant dip to tangy yogurt with fresh herbs.
+                   Meze is often enjoyed with freshly baked bread and a glass of Turkish raki, a traditional anise-flavored spirit..</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </content>
+
+      
+      <content class="container">
+        <div class="row align-items-center my-4">
+          <div class="col-xl-6 col-12">
+            <div class="row justify-content-center text-xl-start text-center">
+              <div class="col-xl-9 col-11 text-white">
+                <h5 class="category_info_heading">Turkish tea and Coffee</h5>
+                <p class="category_info_descr">Turkish tea and coffee are more than just beverages; they are an integral part of social gatherings and hospitality. Turkish tea, served in small tulip-shaped glasses, is strong and black, often accompanied by sugar cubes or traditional sweets.
+                   Turkish coffee, on the other hand, is thick and rich, with a layer of foam on top, and is traditionally served with a glass of water to cleanse the palate</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-12 text-center">
+            <img src="{{ url_for('static', filename='Materials/turtea.jpg')}}" alt="" class="img-fluid rounded shadow" height="300" width="300">
+          </div>  
+        </div>
+      </content>
+
+
+      <footer class="container-fluid mb-0 mt-5">
+        <div class="row justify-content-center" id="footy">
+          <div class="col-xl-6 col-10 text-white text-center py-2 pb-0">
+            <p class="category_info_descr">Explore Turkish Cuisine: Whether you're savoring the flavors of a traditional Turkish breakfast, known as kahvaltı, or sampling street food delicacies like simit (sesame bread rings) or 
+              döner (rotating meat cooked on a vertical spit), Turkish cuisine is a feast for the senses. With its rich history, diverse influences, and emphasis on fresh, seasonal ingredients, Turkish cuisine offers a culinary experience like no other.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+</body>
+</html>
